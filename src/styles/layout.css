@@ -1,0 +1,68 @@
+/* Site header tetap sama */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1020; /* Pastikan lebih tinggi dari elemen lain */
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Menyesuaikan konten utama untuk memenuhi layar */
+.main-content {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  height: 100vh; /* Menjamin konten memenuhi layar */
+  display: flex;
+  flex-direction: column; /* Mengatur tata letak secara vertikal */
+}
+
+/* Grid untuk produk */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  flex-grow: 1; /* Pastikan grid mengambil ruang yang tersisa */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Tampilkan 2 kolom pada layar kecil */
+  }
+}
+
+/* Pastikan body dan html memenuhi tinggi layar */
+html,
+body {
+  height: 100%; /* Menjamin body memenuhi layar */
+  margin: 0;
+  padding: 0;
+}
+
+/* Menambahkan padding dan margin default agar tampilan tetap rapi */
+* {
+  box-sizing: border-box; /* Agar margin dan padding tidak mempengaruhi ukuran elemen */
+}
+
+.testimonial-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-marquee {
+  display: flex;
+  width: fit-content;
+  animation: marquee-scroll 20s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
